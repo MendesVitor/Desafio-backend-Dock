@@ -16,7 +16,7 @@ DROP TABLE pessoas,tipoTransacao
 e então abrir uma nova consulta no banco dockDB e rodar os scripts do banco.
 - Clone o repositório utiliznado o git e o comando.
 ```sh
-git clone https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes.git
+git clone https://github.com/MendesVitor/Desafio-backend-Dock.git
 ```
 - Para instalar as dependências do projeto execute o comando:
 ```sh
