@@ -1,14 +1,14 @@
 # Teste Backend da Dock
 > Teste feito por Vítor Mendes
 
-# [Documentação da API](https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/blob/main/Documentos/Documenta%C3%A7%C3%A3o%20API%20V%C3%ADtor%20Mendes.pdf)
+# [Documentação da API](https://github.com/MendesVitor/Desafio-backend-Dock/blob/master/Documentos/Documenta%C3%A7%C3%A3o%20API%20V%C3%ADtor%20Mendes.pdf)
 
 Os passos abaixo irão ensinar como configurar o ambiente de desenvolvimento e como testar a API hospedada na AWS
 
 ## Como Começar
 - Faça a instalação do [Node.js](https://nodejs.org/en/) versão 14.15.4LTS ou superior, do [SQL Server Management Studio](https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) versão 18.8 ou superior, do [Git](https://git-scm.com/downloads) e do [Postman](https://www.postman.com/)
-- Ao iniciar o SQL Server Management Studio utilize as crendencias e nome do servidor, que estão [aqui](https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/blob/main/Documentos/credenciaisBancoDeDados.txt), e em autenticação selecione 'Autenticação do SQL Server'.
-- 🔴Importante🔴 as tabelas já estão criadas. para testar os scripts do banco de dados, que estão [aqui](https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/blob/main/Documentos/scriptsBancoVitorMendes.sql), é necessário rodar os comandos nesta ordem:
+- Ao iniciar o SQL Server Management Studio utilize as crendencias e nome do servidor, que estão [aqui](https://github.com/MendesVitor/Desafio-backend-Dock/blob/master/Documentos/credenciaisBancoDeDados.txt), e em autenticação selecione 'Autenticação do SQL Server'.
+- 🔴Importante🔴 as tabelas já estão criadas. para testar os scripts do banco de dados, que estão [aqui](https://github.com/MendesVitor/Desafio-backend-Dock/blob/master/Documentos/scriptsBancoVitorMendes.sql), é necessário rodar os comandos nesta ordem:
 ```sh
 DROP TABLE transacoes,contas
 DROP TABLE pessoas,tipoTransacao
@@ -26,7 +26,7 @@ npm install
 ```sh
 npm run dev
 ```
-- 🔴Importante🔴 Para testar com o Postman é so importar os arquivos com as rotas,que estão [aqui](https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/blob/main/Documentos/rotas-teste-vitor-mendes.postman_collection.json), e importar o ambiente [Dev](https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/blob/main/Documentos/Dev.postman_environment.json), para testar a API hospedada na própria máquina, e importar o ambiente [AWS](https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/blob/main/Documentos/AWS.postman_environment.json) para testar a API hospedada na AWS. Depois de importado é necessário selecionar o ambiente em que se deseja fazer a requisição.
+- 🔴Importante🔴 Para testar com o Postman é so importar os arquivos com as rotas,que estão [aqui](https://github.com/MendesVitor/Desafio-backend-Dock/blob/master/Documentos/rotas-teste-vitor-mendes.postman_collection.json), e importar o ambiente [Dev](https://github.com/MendesVitor/Desafio-backend-Dock/blob/master/Documentos/Dev.postman_environment.json), para testar a API hospedada na própria máquina, e importar o ambiente [AWS](https://github.com/MendesVitor/Desafio-backend-Dock/blob/master/Documentos/AWS.postman_environment.json) para testar a API hospedada na AWS. Depois de importado é necessário selecionar o ambiente em que se deseja fazer a requisição.
 
 ## Dependências
 - [Express](https://expressjs.com/pt-br/) Framework para Node.js para ajudar no desenvolvimento da API.
