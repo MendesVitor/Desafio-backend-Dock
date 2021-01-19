@@ -1,0 +1,38 @@
+{
+  "name": "teste_dock_vitor_mendes",
+  "version": "1.0.0",
+  "description": "Teste backend para a Dock feito por Vítor Mendes",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "dev": "set NODE_ENV=test&&set DEBUG=sys:*&& nodemon app.js",
+    "lint:check": "eslint *.js",
+    "lint:fix": "eslint --fix *.js",
+    "prettier:check": "prettier --check *.js",
+    "prettier:fix": "prettier --write *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes.git"
+  },
+  "author": "Vitor Mendes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes/issues"
+  },
+  "homepage": "https://github.com/MendesVitor/Teste-Backend-Dock-Vitor-Mendes#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "mssql": "^6.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  }
+}

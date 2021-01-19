@@ -1,0 +1,52 @@
+--criando tabela de pessoas
+CREATE TABLE pessoas(
+	idPessoa INT IDENTITY(1,1) CONSTRAINT PK_idPessoa PRIMARY KEY,
+	nome VARCHAR(250) NOT NULL,
+	cpf VARCHAR(11) NOT NULL,
+	dataNascimento DATE NOT NULL
+);
+--inserindo uma pessoa
+INSERT INTO 
+	pessoas (nome,cpf,dataNascimento)
+VALUES
+	('Vítor Mendes','99999999999',CONVERT(date, '01/09/1993', 103));
+
+--criando tabela de contas
+CREATE TABLE contas(
+	idConta INT IDENTITY(1,1) CONSTRAINT PK_idConta PRIMARY KEY,
+	idPessoa INT NOT NULL CONSTRAINT FK_idPessoa REFERENCES pessoas(idPessoa),
+	saldo MONEY NOT NULL DEFAULT 0,
+	limiteSaqueDiario MONEY NOT NULL,
+	flagAtivo BIT NOT NULL DEFAULT 1,
+	tipoConta INT NOT NULL,
+	dataCriacao DATE NOT NULL
+);
+
+--Criando tipo de transação para auxiliar no extrato
+CREATE TABLE tipoTransacao(
+	idTipoTransacao INT IDENTITY(1,1) CONSTRAINT PK_idTipoTransacao PRIMARY KEY,
+	tipo VARCHAR(15) NOT NULL,
+	flagAtivo BIT NOT NULL DEFAULT 1,
+	dataCadastro DATE NOT NULL DEFAULT GETDATE()
+);
+
+--criando tipo de transação depósito
+INSERT INTO
+	tipoTransacao (tipo)
+VALUES
+	('Depósito');
+
+--criando tipo de transação saque
+INSERT INTO
+	tipoTransacao (tipo)
+VALUES
+	('Saque');
+
+--criando tabela de trnasações
+CREATE TABLE transacoes(
+	idTransacao INT IDENTITY(1,1) CONSTRAINT PK_idTransacao PRIMARY KEY,
+	idConta INT NOT NULL CONSTRAINT FK_idConta REFERENCES contas(idConta),
+	idTipoTransacao INT NOT NULL CONSTRAINT FK_idTipoTransacao REFERENCES tipoTransacao(idTipoTransacao),
+	valor MONEY NOT NULL,
+	dataTransacao DATE NOT NULL
+);

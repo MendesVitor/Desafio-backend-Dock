@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "011ee6cc-8f68-4f97-b683-60dba1d4e0c0",
+		"name": "rotas-teste-vitor-mendes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Conta",
+			"item": [
+				{
+					"name": "Criar Conta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPerson\":1,\r\n    \"limit\":1000,\r\n    \"accountType\":1,\r\n    \"date\":\"16/01/2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/conta/criar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"conta",
+								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bloquear Conta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/conta/bloquear",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"conta",
+								"bloquear"
+							]
+						},
+						"description": "Bloqueia uma conta"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operação",
+			"item": [
+				{
+					"name": "fazer depósito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\":1,\r\n    \"value\":10.50,\r\n    \"date\":\"31/01/2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/operacao/deposito",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"operacao",
+								"deposito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consultar saldo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/operacao/saldo/:account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"operacao",
+								"saldo",
+								":account"
+							],
+							"variable": [
+								{
+									"key": "account",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fazer saque",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\":1,\r\n    \"value\":50,\r\n    \"date\":\"20/01/2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/operacao/saque",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"operacao",
+								"saque"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tirar extrato",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/operacao/extrato/:account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"operacao",
+								"extrato",
+								":account"
+							],
+							"variable": [
+								{
+									"key": "account",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tirar extrato por período",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/operacao/extrato-periodo/:account?startDate=01/01/2021&finalDate=01/02/2021",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"operacao",
+								"extrato-periodo",
+								":account"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "01/01/2021"
+								},
+								{
+									"key": "finalDate",
+									"value": "01/02/2021"
+								}
+							],
+							"variable": [
+								{
+									"key": "account",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://petstore.swagger.io/v1",
+			"type": "string"
+		}
+	]
+}
